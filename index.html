@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Campus Eats helps students browse campus cafés, discover popular meals, and order food for quick pickup."
+    />
+    <title>Campus Eats</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="container header-inner">
+          <a href="#top" class="brand" aria-label="Campus Eats home">Campus Eats</a>
+
+          <nav class="main-nav" aria-label="Main navigation">
+            <a href="#top" class="nav-link active">Home</a>
+            <a href="#restaurants" class="nav-link">Restaurants</a>
+            <a href="#menu" class="nav-link">Menu</a>
+            <a href="#contact" class="nav-link">Contact</a>
+          </nav>
+
+          <button
+            class="cart-button"
+            type="button"
+            aria-label="View cart"
+            aria-expanded="false"
+            aria-controls="cart-panel"
+          >
+            <img src="assets/cart.svg" alt="" aria-hidden="true" />
+            <span>Cart</span>
+            <span class="cart-count" aria-live="polite" aria-atomic="true">0</span>
+          </button>
+        </div>
+      </header>
+
+      <div id="cart-panel" class="cart-panel" aria-hidden="true" role="dialog" aria-modal="false" aria-labelledby="cart-title">
+        <div class="cart-panel-inner">
+          <div class="cart-header">
+            <h2 id="cart-title">Your Cart</h2>
+            <button class="cart-close" type="button" aria-label="Close cart">Close</button>
+          </div>
+
+          <div id="cart-items" class="cart-items" aria-live="polite"></div>
+
+          <div class="cart-summary">
+            <div class="cart-total-row">
+              <span>Total</span>
+              <strong id="cart-total">Rs. 0</strong>
+            </div>
+            <button type="button" class="button primary cart-checkout" aria-label="Proceed to checkout">Checkout</button>
+          </div>
+        </div>
+      </div>
+
+      <main id="top">
+        <section class="hero container" aria-labelledby="hero-heading">
+          <div class="hero-copy">
+            <h1 id="hero-heading">Delicious food, right on campus.</h1>
+            <p>
+              Discover your favorite campus cafés and order fresh meals with ease.
+            </p>
+
+            <div class="hero-actions">
+              <a class="button primary" href="#restaurants">Explore Restaurants</a>
+              <a class="button secondary" href="#menu">View Menu</a>
+            </div>
+          </div>
+
+          <div class="hero-media">
+            <img
+              src="assets/hero.png"
+              alt="A gourmet chicken burger served on a plate with crispy fries beside it"
+            />
+          </div>
+        </section>
+
+        <section class="category-section container" aria-labelledby="category-heading">
+          <h2 id="category-heading">What are you craving?</h2>
+
+          <div class="chip-list" aria-label="Meal categories">
+            <button type="button" class="chip active" aria-pressed="true">Burgers</button>
+            <button type="button" class="chip" aria-pressed="false">Pizza</button>
+            <button type="button" class="chip" aria-pressed="false">Drinks</button>
+            <button type="button" class="chip" aria-pressed="false">Snacks</button>
+          </div>
+        </section>
+
+        <section id="menu" class="menu-section container" aria-labelledby="menu-heading">
+          <div class="section-heading">
+            <h2 id="menu-heading">Popular on Campus</h2>
+            <p>A few campus favorites for your next food break.</p>
+          </div>
+
+          <div class="food-grid">
+            <article class="food-card">
+              <div class="food-image-wrap">
+                <img
+                  src="assets/hero.png"
+                  alt="Chicken burger with crispy chicken, lettuce, and mayo"
+                />
+              </div>
+
+              <div class="food-card-body">
+                <div class="food-copy">
+                  <h3>Chicken Burger</h3>
+                  <p>Crispy chicken, lettuce &amp; mayo</p>
+                </div>
+
+                <div class="price-row">
+                  <span class="price">Rs. 450</span>
+                  <button
+                    type="button"
+                    class="button small primary"
+                    data-add-to-cart
+                    data-name="Chicken Burger"
+                    data-price="450"
+                    aria-label="Add Chicken Burger to cart"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="food-card">
+              <div class="food-image-wrap">
+                <img src="assets/food-fries.png" alt="Golden fries lightly salted in a paper tray" />
+              </div>
+
+              <div class="food-card-body">
+                <div class="food-copy">
+                  <h3>Fries</h3>
+                  <p>Golden fries, lightly salted</p>
+                </div>
+
+                <div class="price-row">
+                  <span class="price">Rs. 180</span>
+                  <button
+                    type="button"
+                    class="button small primary"
+                    data-add-to-cart
+                    data-name="Fries"
+                    data-price="180"
+                    aria-label="Add Fries to cart"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="food-card">
+              <div class="food-image-wrap">
+                <img src="assets/food-lemonade.png" alt="Fresh lemonade served with ice in a tall glass" />
+              </div>
+
+              <div class="food-card-body">
+                <div class="food-copy">
+                  <h3>Lemonade</h3>
+                  <p>Fresh lemon, served with ice</p>
+                </div>
+
+                <div class="price-row">
+                  <span class="price">Rs. 120</span>
+                  <button
+                    type="button"
+                    class="button small primary"
+                    data-add-to-cart
+                    data-name="Lemonade"
+                    data-price="120"
+                    aria-label="Add Lemonade to cart"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="cafes-section" id="restaurants" aria-labelledby="cafes-heading">
+          <div class="container">
+            <div class="section-heading">
+              <h2 id="cafes-heading">Featured Campus Cafés</h2>
+              <p>Your familiar spots, now a little easier to order from.</p>
+            </div>
+
+            <div class="cafes-grid">
+              <article class="cafe-card">
+                <div class="cafe-image-wrap">
+                  <img
+                    src="assets/cafe-campus.png"
+                    alt="Campus Café interior with warm lighting, seating, and greenery"
+                  />
+                </div>
+
+                <div class="cafe-card-body">
+                  <div class="cafe-info">
+                    <h3>Campus Café</h3>
+                    <p>Student Centre, Ground Floor</p>
+                  </div>
+
+                  <div class="cafe-meta">
+                    <span>Open until 6:00 PM</span>
+                    <span>Pickup 10–15 min</span>
+                  </div>
+
+                  <a href="#" class="button tertiary">View Menu</a>
+                </div>
+              </article>
+
+              <article class="cafe-card">
+                <div class="cafe-image-wrap">
+                  <img
+                    src="assets/cafe-library.png"
+                    alt="Library Corner café interior with natural light and study tables"
+                  />
+                </div>
+
+                <div class="cafe-card-body">
+                  <div class="cafe-info">
+                    <h3>Library Corner</h3>
+                    <p>Main Library</p>
+                  </div>
+
+                  <div class="cafe-meta">
+                    <span>Pickup 5–10 min</span>
+                  </div>
+
+                  <a href="#" class="button tertiary">View Menu</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="steps-section container" aria-labelledby="steps-heading">
+          <div class="section-heading">
+            <h2 id="steps-heading">How it works</h2>
+            <p>Good food in three simple steps.</p>
+          </div>
+
+          <div class="steps-grid">
+            <article class="step-card">
+              <img src="assets/browse.svg" alt="" aria-hidden="true" />
+              <div class="step-copy">
+                <h3>Browse</h3>
+                <p>Explore cafés and food options.</p>
+              </div>
+            </article>
+
+            <article class="step-card">
+              <img src="assets/order.svg" alt="" aria-hidden="true" />
+              <div class="step-copy">
+                <h3>Order</h3>
+                <p>Choose your food and add it to your cart.</p>
+              </div>
+            </article>
+
+            <article class="step-card">
+              <img src="assets/pickup.svg" alt="" aria-hidden="true" />
+              <div class="step-copy">
+                <h3>Pick Up</h3>
+                <p>Collect your order when it is ready.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer" id="contact">
+        <div class="container footer-inner">
+          <div class="footer-brand">
+            <a href="#top" class="brand">Campus Eats</a>
+            <p>Making campus food ordering easier.</p>
+          </div>
+
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#top">Home</a></li>
+              <li><a href="#restaurants">Restaurants</a></li>
+              <li><a href="#menu">Menu</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-contact">
+            <h3>Contact</h3>
+            <a href="mailto:hello@campuseats.example">hello@campuseats.example</a>
+            <p>Student Centre,<br />University Campus</p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="container">
+            <p>© <span id="year"></span> Campus Eats. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
